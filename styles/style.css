@@ -212,19 +212,6 @@ nav a:hover {
     color: #a66b50;
 }
 
-/* Back Button */
-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    border: none;
-    background-color: #a66b50;
-    color: #fff;
-    border-radius: 25px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
 
 button a {
     color: #fff;
