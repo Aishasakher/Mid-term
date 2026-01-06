@@ -21,36 +21,32 @@
     </nav>
 </header>
 
-<!-- HERO IMAGE -->
 <section class="hero-image">
     <img src="gal.JPG" alt="my gallery">
 </section>
 
-<!-- GALLERY SECTION -->
 <section id="gallery" class="gallery-section">
     <h2>My Artworks</h2>
 
     <div class="card-container">
 
         <article class="card">
-            <img src="goldenbloom.JPG" alt="Golden Bloom Hues painting">
-            <h3>Golden Bloom Hues</h3>
+            <img src="goldenbloom.JPG" alt="Golden Bloom Hues painting" onclick="openModal(this)">
+            <h3>Golden Bloom</h3>
             <p>This painting captures a peaceful garden filled with yellow flowers under sunlight, symbolizing warmth and serenity.</p>
         </article>
 
         <article class="card">
-            <img src="whimsicalwhiskers.JPG" alt="Colorful cat painting">
-            <h3>Whimsical Whiskers</h3>
+            <img src="whimsicalwhiskers.JPG" alt="Colorful cat painting" onclick="openModal(this)">
+            <h3>A Cats Soul</h3>
             <p>An acrylic painting of a vibrant cat whose swirling colors express curiosity, intelligence, and liveliness.</p>
         </article>
 
         <article class="card">
-            <img src="tranquilbluehaven.JPG" alt="Blue lake painting">
-            <h3>Tranquil Blue Haven</h3>
-            <p>“Tranquil Blue Haven” portrays a calm lakeside where clear skies and shimmering water reflect peace and balance.</p>
+            <img src="tranquilbluehaven.JPG" alt="Blue lake painting" onclick="openModal(this)">
+            <h3>Blue Haven</h3>
+            <p>“Blue Haven” portrays a calm lakeside where clear skies and shimmering water reflect peace and balance.</p>
         </article>
-
-     
 
     </div>
 </section>
@@ -58,6 +54,25 @@
 <footer>
     <p>&copy; 2025 Aisha Alkhaderi Art Gallery — All Rights Reserved.</p>
 </footer>
+
+<!-- IMAGE MODAL -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <img id="modalImg">
+</div>
+
+<script>
+function openModal(img) {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+    modalImg.alt = img.alt;
+}
+
+function closeModal() {
+    document.getElementById("imageModal").style.display = "none";
+}
+</script>
 
 </body>
 </html>

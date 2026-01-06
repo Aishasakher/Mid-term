@@ -271,3 +271,61 @@ section img {
 #contact a:hover {
     color: #5a3e36;
 }
+
+/* IMAGE MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    cursor: zoom-out;
+}
+
+/* Make gallery images feel clickable */
+.card img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card img:hover {
+    transform: scale(1.03);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
