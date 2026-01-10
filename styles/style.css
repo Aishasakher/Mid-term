@@ -774,12 +774,116 @@ footer {
     color: #7c6a54;
     font-size: 0.95rem;
 }
+@media (max-width: 600px) {
+
+  /* Header text scales */
+  .hero-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-header p {
+    font-size: 1rem;
+  }
+
+  /* Navigation stays horizontal */
+  nav {
+    flex-wrap: wrap;          /* allows wrapping if space is tight */
+    gap: 15px;
+  }
+
+  nav a {
+    font-size: 0.95rem;
+  }
+
+  /* Hero slideshow */
+  .hero-image.slideshow {
+    width: 90%;
+    height: 240px;
+  }
+
+  /* Gallery cards */
+  .card {
+    width: 90%;
+  }
+
+  .card img {
+    height: 200px;
+  }
+
+  /* About section */
+  #About {
+    padding: 25px 20px;
+  }
+
+  /* About cards */
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    font-size: 0.85rem;
+  }
+}
+/* =========================
+   GALLERY CAROUSEL
+========================= */
+
+.carousel-container {
+    overflow: hidden;        /* hide extra cards */
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.card {
+    flex: 0 0 100%;          /* each card takes full width of container */
+    max-width: 320px;        /* optional if you want smaller cards */
+    margin: 0 auto;          /* center card */
+}
 
 
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+}
 
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.8);
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 5px 12px;
+    border-radius: 8px;
+    z-index: 10;
+    transition: background 0.3s ease;
+}
 
+.carousel-btn:hover {
+    background: rgba(255,255,255,1);
+}
 
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
 
+/* Optional: make it responsive */
+@media (max-width: 768px) {
+    .carousel-track {
+        gap: 15px;
+    }
+    .carousel-btn {
+        font-size: 1.5rem;
+        padding: 4px 10px;
+    }
+}
 
 
 
