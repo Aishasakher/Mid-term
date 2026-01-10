@@ -14,7 +14,7 @@
     <h1>AISHA ALKHADERI ART GALLERY</h1>
     <p>Welcome to my modern and creative online art venue</p>
 
-     <nav>
+    <nav>
         <a href="about.html">About</a>
         <a href="index.html">Gallery</a>
         <a href="content.html">Content</a>
@@ -22,12 +22,15 @@
     </nav>
 </header>
 
-<section class="hero-image">
-    <video autoplay muted loop playsinline class="hero-video">
-        <source src="video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+<!-- HERO IMAGE SLIDESHOW -->
+<section class="hero-image slideshow">
+    <img src="c.JPG" alt="Slide 1" class="slide active">
+    <img src="m.JPG" alt="Slide 2" class="slide">
+    <img src="f.JPG" alt="Slide 3" class="slide">
+    <img src="g.JPG" alt="Slide 4" class="slide">
 </section>
+
+<!-- GALLERY -->
 <section id="gallery" class="gallery-section">
     <h2>My Artworks</h2>
 
@@ -50,7 +53,8 @@
             <h3>Blue Haven</h3>
             <p>“Blue Haven” portrays a calm lakeside where clear skies and shimmering water reflect peace and balance.</p>
         </article>
-   <article class="card">
+
+        <article class="card">
             <img src="citylife.JPG" alt="City life painting" onclick="openModal(this)">
             <h3>City Life</h3>
             <p>This painting captures a peaceful garden filled with yellow flowers under sunlight, symbolizing warmth and serenity.</p>
@@ -67,9 +71,11 @@
             <h3>A Night Stream</h3>
             <p>“Blue Haven” portrays a calm lakeside where clear skies and shimmering water reflect peace and balance.</p>
         </article>
+
     </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
     <p>&copy; 2025 Aisha Alkhaderi Art Gallery — All Rights Reserved.</p>
 </footer>
@@ -79,7 +85,9 @@
     <img id="modalImg">
 </div>
 
+<!-- SCRIPTS -->
 <script>
+// IMAGE MODAL
 function openModal(img) {
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImg");
@@ -91,6 +99,20 @@ function openModal(img) {
 function closeModal() {
     document.getElementById("imageModal").style.display = "none";
 }
+
+// HERO SLIDESHOW
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.hero-image.slideshow .slide');
+    let current = 0;
+
+    function nextSlide() {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+    }
+
+    setInterval(nextSlide, 4000);
+});
 </script>
 
 </body>
