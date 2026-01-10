@@ -14,17 +14,20 @@
     <h1>AISHA ALKHADERI ART GALLERY</h1>
     <p>Welcome to my modern and creative online art venue</p>
 
-    <nav>
+     <nav>
         <a href="about.html">About</a>
-        <a href="#gallery">Gallery</a>
+        <a href="index.html">Gallery</a>
         <a href="content.html">Content</a>
+        <a href="digitalgallery.html">Digital Gallery</a>
     </nav>
 </header>
 
 <section class="hero-image">
-    <img src="gal.JPG" alt="my gallery">
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 </section>
-
 <section id="gallery" class="gallery-section">
     <h2>My Artworks</h2>
 
@@ -47,7 +50,23 @@
             <h3>Blue Haven</h3>
             <p>“Blue Haven” portrays a calm lakeside where clear skies and shimmering water reflect peace and balance.</p>
         </article>
+   <article class="card">
+            <img src="citylife.JPG" alt="City life painting" onclick="openModal(this)">
+            <h3>City Life</h3>
+            <p>This painting captures a peaceful garden filled with yellow flowers under sunlight, symbolizing warmth and serenity.</p>
+        </article>
 
+        <article class="card">
+            <img src="adream.JPG" alt="Someones Dream Place" onclick="openModal(this)">
+            <h3>A Dream</h3>
+            <p>An acrylic painting of a vibrant cat whose swirling colors express curiosity, intelligence, and liveliness.</p>
+        </article>
+
+        <article class="card">
+            <img src="anightstream.JPG" alt="A Night Walk Painting" onclick="openModal(this)">
+            <h3>A Night Stream</h3>
+            <p>“Blue Haven” portrays a calm lakeside where clear skies and shimmering water reflect peace and balance.</p>
+        </article>
     </div>
 </section>
 

@@ -7,33 +7,100 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
-
 <body>
-    <header>
-        <h1>AISHA ALKHADERI ART GALLERY</h1>
-        <p>A creative online venue showcasing my visual art</p>
-        <nav>
-            <a href="about.html">About</a>
-            <a href="index.html#gallery">Gallery</a>
-            <a href="content.html">Content</a>
-        </nav>
-    </header>
 
-    <main>
-        <!-- first section -->
-        <section id="About">
-            <h2>ABOUT THE GALLERY</h2>
-            <img src="mygal.png" alt="art gallery welcome image" width="500">
+<header>
+    <h1>AISHA ALKHADERI ART GALLERY</h1>
+    <p>A creative online venue showcasing my visual art</p>
+     <nav>
+        <a href="about.html">About</a>
+        <a href="index.html">Gallery</a>
+        <a href="content.html">Content</a>
+        <a href="digitalgallery.html">Digital Gallery</a>
+    </nav>
+</header>
 
-            <p>This online gallery was created to share my artwork with the world in a simple, modern, and meaningful space. Every piece displayed here reflects my passion for color, storytelling, and emotion.</p>
+<main>
+    <section id="About" class="about-animate">
+        <h2>ABOUT THE GALLERY</h2>
 
-            <p>I am <strong>Aisha Alkhaderi</strong>, a designer and visual communication student who loves exploring creativity through painting, digital art, and expressive visuals. My gallery acts as a small corner of the internet where ideas and art meet.</p>
+       <div class="interactive-gallery">
 
-            <p>The gallery is designed as a calm, minimal venue — a place where the focus stays on the artwork itself. Visitors can explore my collection, learn about each piece, and experience the emotions behind every brushstroke.</p>
+    <img src="mygal.png" alt="Interactive gallery view" class="gallery-base">
 
-            <p>As I continue growing as an artist, this gallery will grow with me. New artworks, new colors, and new stories will always find a home here.</p>
-        </section>
-    </main>
+<button class="hotspot spot-1" onclick="openArtwork('goldenbloom.JPG')">
+  
+</button>
+
+<button class="hotspot spot-2" onclick="openArtwork('agirl.JPG')">
+    
+</button>
+
+<button class="hotspot spot-3" onclick="openArtwork('pearl.JPG')">
+    
+</button>
+
+</div>
+
+<!-- MODAL -->
+<div id="artModal" class="modal" onclick="closeArtwork()">
+    <img id="artModalImg">
+</div>
+
+
+       <div class="about-cards">
+
+    <div class="about-card">
+        <h3>The Gallery</h3>
+        <p>
+            This online gallery was created to share my artwork with the world in a simple,
+            modern, and meaningful space. Every piece reflects my passion for color,
+            storytelling, and emotion.
+        </p>
+    </div>
+
+    <div class="about-card">
+        <h3>The Artist</h3>
+        <p>
+            I am <strong>Aisha Alkhaderi</strong>, a designer and visual communication student
+            who loves exploring creativity through painting, digital art, and expressive visuals.
+        </p>
+    </div>
+
+    <div class="about-card">
+        <h3>The Experience</h3>
+        <p>
+            The gallery is designed as a calm, minimal venue — a place where the focus stays
+            on the artwork itself and the emotions behind every brushstroke.
+        </p>
+    </div>
+
+    <div class="about-card">
+        <h3>Growing Forward</h3>
+        <p>
+            As I continue growing as an artist, this gallery will grow with me.
+            New artworks, new colors, and new stories will always find a home here.
+        </p>
+    </div>
+
+</div>
+
+    </section>
+</main>
+<script>
+function openArtwork(src) {
+    const modal = document.getElementById("artModal");
+    const img = document.getElementById("artModalImg");
+
+    img.src = src;
+    modal.style.display = "flex";
+}
+
+function closeArtwork() {
+    document.getElementById("artModal").style.display = "none";
+}
+</script>
+
+
 </body>
-</html>
 </html>
