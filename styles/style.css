@@ -868,7 +868,7 @@ footer {
 }
 
 .carousel-btn:hover {
-    background: rgba(255,255,255,1);
+    background: rgba(117, 42, 10, 0.281);
 }
 
 .carousel-btn.prev { left: 10px; }
