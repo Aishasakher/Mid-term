@@ -37,7 +37,7 @@ body {
 
 nav {
     display: flex;
-    gap: 25px;
+    gap: 5px;
     justify-content: center;
 }
 
@@ -786,10 +786,11 @@ footer {
   }
 
   /* Navigation stays horizontal */
-  nav {
-    flex-wrap: wrap;          /* allows wrapping if space is tight */
-    gap: 15px;
-  }
+@media (max-width: 768px) {
+    nav {
+        gap: 8px;        /* tighter spacing on mobile */
+    }
+}
 
   nav a {
     font-size: 0.95rem;
