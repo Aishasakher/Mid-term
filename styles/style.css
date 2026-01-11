@@ -321,7 +321,8 @@ section img {
 .about-animate {
     animation: fadeUp 1.2s ease forwards;
     opacity: 0;
-}
+} 
+
 
 @keyframes fadeUp {
     from {
@@ -709,6 +710,107 @@ nav a:hover {
     font-size: 1.05rem;
     color: #5a4a3b;
 }
+/* =========================
+   DIGITAL PAGE BACKGROUND ONLY
+========================= */
+body.digital-gallery {
+    background: linear-gradient(
+        135deg,
+        #e6dbff 0%,
+        #d9d0f0 35%,
+        #e9e2ff 70%,
+        #f4f1ff 100%
+    );
+    background-attachment: fixed;
+    color: #2a2438;
+}
+
+/* Soft ambient glow (background only) */
+body.digital-gallery::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 25%, rgba(255,255,255,0.55), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(190,170,255,0.35), transparent 45%);
+    filter: blur(30px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* =========================
+   HERO HEADER (NO SIZE CHANGES)
+========================= */
+.digital-gallery .hero-header {
+    /* visual only */
+    background: rgba(255,255,255,0.28);
+    backdrop-filter: blur(14px);
+    border-radius: 26px;
+
+    /* IMPORTANT: no padding, margin, width changes */
+    box-shadow:
+        0 20px 60px rgba(120, 90, 180, 0.25),
+        inset 0 0 0 1px rgba(255,255,255,0.6);
+}
+
+/* Soft futuristic glow on text only */
+.digital-gallery .hero-header h1 {
+    text-shadow: 0 0 14px rgba(170,140,255,0.35);
+}
+
+/* =========================
+   NAV BAR (STYLE ONLY)
+========================= */
+
+/* =========================
+   GALLERY CONTAINER (NO IMAGE SIZE CHANGE)
+========================= */
+.digital-gallery .digital-gallery-page {
+    background: rgba(255,255,255,0.22);
+    backdrop-filter: blur(16px);
+    border-radius: 30px;
+
+    /* visual polish only */
+    box-shadow:
+        0 30px 90px rgba(120, 90, 180, 0.28),
+        inset 0 0 0 0.7px rgba(255,255,255,0.5);
+}
+
+/* =========================
+   IMAGE – VISUAL ONLY
+========================= */
+.digital-gallery .digital-gallery-base {
+    /* NO width / height / margin changes */
+    box-shadow:
+        0 18px 50px rgba(60, 40, 120, 0.22);
+}
+
+/* =========================
+   MODAL (STYLE ONLY)
+========================= */
+.digital-gallery .modal {
+    background: rgba(230, 224, 255, 0.7);
+    backdrop-filter: blur(18px);
+}
+
+/* =========================
+   SUBTLE ENTRY MOTION
+========================= */
+.digital-gallery .hero-header,
+.digital-gallery .digital-gallery-page {
+    animation: softEnter 1s ease forwards;
+}
+
+@keyframes softEnter {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 
 /* =========================
@@ -885,20 +987,114 @@ footer {
         padding: 4px 10px;
     }
 }
+/* =========================
+   CONTENT PAGE
+========================= */
+.content-page {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+    max-width: 100vw; /* prevent horizontal scroll */
+    overflow-x: hidden;
+}
 
+/* =========================
+   HERO VIDEO SECTION
+========================= */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* center video and text */
+    gap: 16px;
+    width: 100%;
+    overflow: hidden;      /* prevent horizontal scroll */
+}
 
+.hero-video {
+    width: 100%;
+    max-width: 360px;      /* keep portrait/reel size on desktop */
+    aspect-ratio: 9 / 16;
+    border-radius: 22px;
+    overflow: hidden;
+    object-fit: cover;
+    display: block;
+    box-shadow: none;      /* remove purple shadow */
+}
 
+/* =========================
+   HORIZONTAL CAROUSEL
+========================= */
+.content-carousel {
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* smooth swipe on iOS */
+}
 
+.carousel-track {
+    display: flex;
+    gap: 16px;
+    padding: 0 20px;
+}
 
+.carousel-track::-webkit-scrollbar {
+    display: none; /* hide scrollbar */
+}
 
+.content-card {
+    flex: 0 0 auto;            /* don’t stretch too much */
+    width: 280px;               /* fixed moderate width on desktop */
+    scroll-snap-align: center;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(14px);
+    border-radius: 26px;
+    padding: 18px;
+    box-shadow: none;           /* remove purple shadow */
+    transition: transform 0.35s ease;
+}
 
+.content-card:hover {
+    transform: translateY(-6px);
+}
 
+.content-card h2 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
 
+.content-card p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    opacity: 0.85;
+}
 
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1024px) {
+    .hero-video, .hero-description {
+        max-width: 280px;
+    }
+    .content-card {
+        width: 240px;
+    }
+}
 
+@media (max-width: 768px) {
+    .hero-video, .hero-description {
+        max-width: 220px;
+    }
+    .content-card {
+        width: 200px;
+    }
+}
 
-
-
-
-
-
+@media (max-width: 480px) {
+    .hero-video, .hero-description {
+        max-width: 160px;
+    }
+    .content-card {
+        width: 160px;
+    }
+}
